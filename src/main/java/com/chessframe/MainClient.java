@@ -10,8 +10,8 @@ import javafx.stage.Stage;
  */
 public class MainClient extends Application {
     private static final CurrentView INITIAL_VIEW = CurrentView.MainMenu;
-    private static final double WIDTH = 1280;
-    private static final double HEIGHT = 720;
+    private static final double WIDTH = 800;
+    private static final double HEIGHT = 600;
 
 
     @Override

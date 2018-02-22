@@ -3,5 +3,5 @@ package com.chessframe.game;
 /**
  * Represents a light tile
  */
-public class TileColorLight {
+public class TileColorLight extends TileColor{
 }

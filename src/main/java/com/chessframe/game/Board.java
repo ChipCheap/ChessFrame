@@ -1,4 +1,4 @@
-package main.java.com.chessframe.model;
+package com.chessframe.game;
 
 /**
  * Represents a x * y board with any number of tiles inside

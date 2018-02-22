@@ -1,4 +1,4 @@
-package main.java.com.chessframe.model;
+package com.chessframe.game;
 
 /**
  * Contains the necessary information for a piece/tile to be located.

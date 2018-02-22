@@ -1,4 +1,4 @@
-package com.chessframe.controller;
+package com.chessframe.client.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.Parent;

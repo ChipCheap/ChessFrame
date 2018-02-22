@@ -1,4 +1,4 @@
-package com.chessframe.model;
+package com.chessframe.client.model;
 
 /**
  * The current view enum specifies the kind

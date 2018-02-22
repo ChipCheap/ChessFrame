@@ -1,4 +1,4 @@
-package com.chessframe.controller;
+package com.chessframe.client.controller;
 
 /**
  * Specifies that the view of a FXML controller is resizable.

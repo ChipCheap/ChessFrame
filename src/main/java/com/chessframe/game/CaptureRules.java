@@ -1,4 +1,4 @@
-package main.java.com.chessframe.model;
+package com.chessframe.game;
 
 /**
  * Specifies when a capture is allowed and what happens afterwards

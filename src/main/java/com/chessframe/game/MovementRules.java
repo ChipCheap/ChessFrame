@@ -1,4 +1,4 @@
-package main.java.com.chessframe.model;
+package com.chessframe.game;
 
 /**
  * Specifies when a move is allowed and what happens afterwards

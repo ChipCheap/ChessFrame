@@ -1,4 +1,4 @@
-package main.java.com.chessframe.model;
+package com.chessframe.game;
 
 public class StandardTile extends Tile {
 }

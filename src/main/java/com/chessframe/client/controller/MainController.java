@@ -1,6 +1,6 @@
-package com.chessframe.controller;
+package com.chessframe.client.controller;
 
-import com.chessframe.model.CurrentView;
+import com.chessframe.client.model.CurrentView;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -75,7 +75,7 @@ public class MainController implements Resizable {
         //Load FXML
         this.currentViewParentMap = new HashMap<>();
         this.currentViewParentMap.put(CurrentView.MainMenu,
-                fxmlLoader.load(classLoader.getResourceAsStream("com/chessframe/view/MainMenu.fxml")));
+                fxmlLoader.load(classLoader.getResourceAsStream("com/chessframe/client/view/MainMenu.fxml")));
         this.mainMenuController = fxmlLoader.getController();
         //TODO load FXML
     }

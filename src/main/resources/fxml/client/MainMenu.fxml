@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            stylesheets="@../../css/Main.css" xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.chessframe.client.MainMenuController">
+    <top>
+        <Label fx:id="header" alignment="CENTER" text="Chess Frame" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="System Bold" size="29.0"/>
+            </font>
+            <padding>
+                <Insets bottom="25.0" top="25.0"/>
+            </padding>
+        </Label>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="startServer" mnemonicParsing="false" onAction="#onStartServer" text="Start Server"/>
+                <Button fx:id="connect" mnemonicParsing="false" onAction="#onConnect" text="Connect"/>
+                <Button fx:id="pieceCreator" mnemonicParsing="false" onAction="#onPieceCreator" text="Create pieces"/>
+                <Button fx:id="gameCreator" mnemonicParsing="false" onAction="#onGameCreator" text="Create gamemode"/>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

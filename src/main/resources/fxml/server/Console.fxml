@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../css/Main.css"
+            xmlns="http://javafx.com/javafx/8" fx:controller="com.chessframe.server.ConsoleController">
+    <bottom>
+        <TextField fx:id="inputField" onAction="#onInputAction" stylesheets="@../../css/Main.css"
+                   BorderPane.alignment="CENTER"/>
+    </bottom>
+    <center>
+        <TextArea fx:id="outputArea" BorderPane.alignment="CENTER" editable="false" scrollTop="Infinity"/>
+    </center>
+</BorderPane>

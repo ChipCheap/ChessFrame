@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
+    <Parameters>
+        <param name="MaxBackupIndex" value="2"/>
+    </Parameters>
+
     <Appenders>
         <Console name="STDOUT" target="SYSTEM_ERR">
-            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+            <PatternLayout pattern="%d{dd-MMM-yyyy HH:mm:ss} %-5p [%t] %C{2} (%F:%L) - %m%n"/>
         </Console>
 
-        <File name="Server" fileName="ChessFrame/logs/server/${date:yy-MM-dd}/${date:HH-mm-ss}.log">
+        <RollingFile name="FILE" fileName="log/chessFrame.log" filePattern="log/chessFrame.%i.log">
             <PatternLayout>
-                <Pattern>%d %-5p [%t] %C{2} (%F:%L) - %m%n</Pattern>
+                <Pattern>%d{dd-MMM-yyyy HH:mm:ss} %-5p [%t] %C{2} (%F:%L) - %m%n</Pattern>
             </PatternLayout>
-        </File>
-
-        <File name="Client" fileName="ChessFrame/logs/client/${date:yy-MM-dd}/${date:HH-mm-ss}.log">
-            <PatternLayout>
-                <Pattern>%d %-5p [%t] %C{2} (%F:%L) - %m%n</Pattern>
-            </PatternLayout>
-        </File>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="settlersofcatan.server" level="warn">
-            <AppenderRef ref="Server"/>
-        </Logger>
-        <Logger name="settlersofcatan.client" level="warn">
-            <AppenderRef ref="Client"/>
-        </Logger>
-        <Root level="warning">
+        <Root level="trace">
             <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="FILE"/>
         </Root>
     </Loggers>
 </Configuration>

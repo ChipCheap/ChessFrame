@@ -50,10 +50,6 @@ public class MainController implements Resizable {
     private Map<CurrentView, Parent> currentViewParentMap;
 
     /**
-     * The main menu controller.
-     */
-    private MainMenuController mainMenuController;
-    /**
      * The width which was used for the last resize event.
      */
     private double lastWidth;
@@ -61,6 +57,14 @@ public class MainController implements Resizable {
      * The height which was used for the last resize event.
      */
     private double lastHeight;
+    /**
+     * The main menu controller.
+     */
+    private MainMenuController mainMenuController;
+    /**
+     * The game controller.
+     */
+    private GameController gameController;
 
 
     /**
@@ -179,7 +183,6 @@ public class MainController implements Resizable {
         */
 
         //Game
-        /*
         log.trace("Loading Game.fxml ...");
         fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(classLoader.getResource("fxml/client/Game.fxml"));
@@ -188,7 +191,6 @@ public class MainController implements Resizable {
         this.gameController = fxmlLoader.getController();
         this.gameController.setMainController(this);
         this.resizableElements.add(this.gameController);
-        */
     }
 
     /**

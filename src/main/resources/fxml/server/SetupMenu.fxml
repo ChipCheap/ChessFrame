@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../css/Main.css"
+            minHeight="-Infinity" minWidth="-Infinity"
+            stylesheets="@../../css/Main.css"
             xmlns="http://javafx.com/javafx/8" fx:controller="com.chessframe.server.SetupMenuController">
    <top>
       <Label fx:id="header" text="Chess Frame - Server" BorderPane.alignment="CENTER">

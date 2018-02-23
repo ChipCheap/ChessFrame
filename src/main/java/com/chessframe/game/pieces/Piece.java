@@ -1,4 +1,8 @@
-package com.chessframe.game;
+package com.chessframe.game.pieces;
+
+import com.chessframe.game.*;
+import com.chessframe.game.tiles.Tile;
+import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
@@ -28,6 +32,18 @@ public abstract class Piece {
      * The owning player of this piece
      */
     private Player owner;
+    /**
+     * The full name of this piece
+     */
+    private String fullName;
+    /**
+     * The shortened name for notation and transmission
+     */
+    private String abbreviation;
+    /**
+     * The image to represent this piece in the view with
+     */
+    private Image image;
     /**
      * The movement options this piece has
      */

@@ -1,7 +1,7 @@
-package com.chessframe.game;
+package com.chessframe.game.rules;
 
 /**
  * Specifies when a promotion is allowed and what happens afterwards
  */
-public class PromotionRules {
+public abstract class PromotionRule {
 }

@@ -1,4 +1,4 @@
-package com.chessframe.game;
+package com.chessframe.game.pieces;
 
 /**
  * Holds all available options for a piece to capture another piece

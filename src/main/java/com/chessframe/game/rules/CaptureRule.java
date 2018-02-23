@@ -1,7 +1,7 @@
-package com.chessframe.game;
+package com.chessframe.game.rules;
 
 /**
  * Specifies when a capture is allowed and what happens afterwards
  */
-public class CaptureRules {
+public class CaptureRule {
 }

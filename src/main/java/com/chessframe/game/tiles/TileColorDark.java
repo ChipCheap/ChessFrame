@@ -1,4 +1,4 @@
-package com.chessframe.game;
+package com.chessframe.game.tiles;
 
 /**
  * Represents a dark tile

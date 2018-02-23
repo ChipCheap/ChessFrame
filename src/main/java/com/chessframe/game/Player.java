@@ -1,5 +1,7 @@
 package com.chessframe.game;
 
+import com.chessframe.game.pieces.Piece;
+
 import java.util.ArrayList;
 
 /**

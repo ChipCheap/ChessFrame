@@ -1,5 +1,6 @@
-package com.chessframe.game;
+package com.chessframe.game.tiles;
 
+import com.chessframe.game.BoardColors;
 import javafx.scene.image.Image;
 
 /**

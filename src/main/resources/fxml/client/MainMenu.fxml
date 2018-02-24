@@ -24,6 +24,7 @@
             <children>
                 <Button fx:id="startServer" mnemonicParsing="false" onAction="#onStartServer" text="Start Server"/>
                 <Button fx:id="connect" mnemonicParsing="false" onAction="#onConnect" text="Connect"/>
+                <Button fx:id="startGame" mnemonicParsing="false" onAction="#onStartGame" text="Start Game (Debug)"/>
                 <Button fx:id="pieceCreator" mnemonicParsing="false" onAction="#onPieceCreator" text="Create pieces"/>
                 <Button fx:id="gameCreator" mnemonicParsing="false" onAction="#onGameCreator" text="Create gamemode"/>
             </children>

@@ -2,6 +2,7 @@ package com.chessframe.client;
 
 import com.chessframe.server.MainServer;
 import com.chessframe.util.Resizable;
+import com.chessframe.util.ResizeUtils;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
@@ -16,6 +17,9 @@ import org.apache.logging.log4j.Logger;
  */
 public class MainMenuController implements Resizable {
     private final static Logger log = LogManager.getLogger((MainMenuController.class.getName()));
+
+    @FXML
+    private Button startGame;
     @FXML
     private Parent root;
     @FXML
@@ -45,12 +49,13 @@ public class MainMenuController implements Resizable {
     }
 
     public void handleResize(double newWidth, double newHeight) {
-        int fontSizeSmall = (int) Math.min(newWidth * 0.03 * (9 / (double) 16), newHeight * 0.03);
-        int fontSizeBig = (int) Math.min(newWidth * 0.06 * (9 / (double) 16), newHeight * 0.06);
+        int fontSizeSmall = ResizeUtils.getSmallFontSize(newWidth, newHeight);
+        int fontSizeBig = ResizeUtils.getHeaderFontSize(newWidth, newHeight);
 
         header.setStyle("-fx-font-size:" + fontSizeBig);
         startServer.setStyle("-fx-font-size: " + fontSizeSmall);
         connect.setStyle("-fx-font-size: " + fontSizeSmall);
+        startGame.setStyle("-fx-font-size: " + fontSizeSmall);
         pieceCreator.setStyle("-fx-font-size: " + fontSizeSmall);
         gameCreator.setStyle("-fx-font-size: " + fontSizeSmall);
     }
@@ -88,5 +93,10 @@ public class MainMenuController implements Resizable {
     @FXML
     private void onGameCreator() {
         mainController.showView(CurrentView.GameCreator);
+    }
+
+    @FXML
+    private void onStartGame() {
+        mainController.showView(CurrentView.Game);
     }
 }

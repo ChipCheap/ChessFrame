@@ -1,6 +1,7 @@
 package com.chessframe.server;
 
 import com.chessframe.util.Resizable;
+import com.chessframe.util.ResizeUtils;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
@@ -40,13 +41,10 @@ public class ConsoleController implements Resizable {
     }
 
     public void handleResize(double newWidth, double newHeight) {
-        int fontSizeSmall = (int) Math.min(newWidth * 0.03 * (9 / (double) 16), newHeight * 0.03);
-        int fontSizeBig = (int) Math.min(newWidth * 0.06 * (9 / (double) 16), newHeight * 0.06);
+        int fontSize = ResizeUtils.getSmallFontSize(newWidth, newHeight);
 
-        /*
-        header.setStyle("-fx-font-size:" + fontSizeBig);
-        startServer.setStyle("-fx-font-size: " + fontSizeSmall);
-        */
+        outputArea.setStyle("-fx-font-size:" + fontSize);
+        inputField.setStyle("-fx-font-size: " + fontSize);
     }
 
     /**
@@ -63,12 +61,6 @@ public class ConsoleController implements Resizable {
         String input = inputField.getText();
 
         if (input != null && !input.equals("")) {
-            LocalDateTime now = LocalDateTime.now();
-            int hour = now.getHour();
-            int minute = now.getMinute();
-            int second = now.getSecond();
-            print(String.format("[%02d:%02d:%02d]: ", hour, minute, second));
-
             switch (input) {
                 //Shutdown the server
                 case "shutdown":
@@ -107,6 +99,17 @@ public class ConsoleController implements Resizable {
     }
 
     /**
+     * Print the current time in the chat.
+     */
+    private void printTime() {
+        LocalDateTime now = LocalDateTime.now();
+        int hour = now.getHour();
+        int minute = now.getMinute();
+        int second = now.getSecond();
+        print(String.format("[%02d:%02d:%02d]: ", hour, minute, second));
+    }
+
+    /**
      * Kicks all players from the server
      */
     private void kickAllPlayers() {
@@ -118,13 +121,13 @@ public class ConsoleController implements Resizable {
      * Prints a list of all commands to the chat
      */
     private void printHelp() {
-        println("A list of all commands:");
-        println("shutdown\t\t|\tShuts down the server.");
-        println("players\t\t|\tPrints all players who are currently online.");
-        println("lobbies\t\t|\tPrints all existing lobbies.");
-        println("kickAll\t\t|\tDestroys all existing lobbies.");
-        println("destroyAll\t|\tKick all logged in players.");
-        println("clear\t\t\t|\tClears the server console.");
+        println(String.join("\n", "A list of all commands:",
+                "\tshutdown\t\t|\tShuts down the server.",
+                "\tplayers\t\t|\tPrints all players who are currently online.",
+                "\tlobbies\t\t|\tPrints all existing lobbies.",
+                "\tkickAll\t\t|\tDestroys all existing lobbies.",
+                "\tdestroyAll\t|\tKick all logged in players.",
+                "\tclear\t\t\t|\tClears the server console."));
     }
 
 
@@ -158,19 +161,21 @@ public class ConsoleController implements Resizable {
      *
      * @param text the string to be printed.
      */
-    private void print(String text) {
+    public void print(String text) {
         outputArea.appendText(text);
     }
 
+
     /**
      * Print a line of text to the output area.
-     * At the end, a new line character is also printed.
+     * At the start, the current time is printed,
+     * and at the end, a new line character is also printed.
      *
      * @param text the string to be printed.
      */
-    private void println(String text) {
+    public void println(String text) {
+        printTime();
         print(text);
         print("\n");
     }
-
 }

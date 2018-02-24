@@ -3,6 +3,7 @@ package com.chessframe.server;
 
 import com.chessframe.util.IntegerField;
 import com.chessframe.util.Resizable;
+import com.chessframe.util.ResizeUtils;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
@@ -49,8 +50,8 @@ public class SetupMenuController implements Resizable {
     }
 
     public void handleResize(double newWidth, double newHeight) {
-        int fontSizeSmall = (int) Math.min(newWidth * 0.03 * (9 / (double) 16), newHeight * 0.03);
-        int fontSizeBig = (int) Math.min(newWidth * 0.06 * (9 / (double) 16), newHeight * 0.06);
+        int fontSizeSmall = ResizeUtils.getSmallFontSize(newWidth, newHeight);
+        int fontSizeBig = ResizeUtils.getHeaderFontSize(newWidth, newHeight);
 
         header.setStyle("-fx-font-size:" + fontSizeBig);
         portLabel.setStyle("-fx-font-size: " + fontSizeSmall);

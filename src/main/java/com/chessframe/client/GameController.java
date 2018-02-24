@@ -3,8 +3,11 @@ package com.chessframe.client;
 import com.chessframe.util.Resizable;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 
 public class GameController implements Resizable {
+    @FXML
+    private Button back;
     @FXML
     private Parent root;
 
@@ -24,8 +27,7 @@ public class GameController implements Resizable {
     }
 
     public void handleResize(double newWidth, double newHeight) {
-        int fontSizeSmall = (int) Math.min(newWidth * 0.03 * (9 / (double) 16), newHeight * 0.03);
-        int fontSizeBig = (int) Math.min(newWidth * 0.06 * (9 / (double) 16), newHeight * 0.06);
+
 
 
     }
@@ -37,5 +39,10 @@ public class GameController implements Resizable {
      */
     public Parent getRoot() {
         return root;
+    }
+
+    @FXML
+    private void onBack() {
+        mainController.showView(CurrentView.MainMenu);
     }
 }

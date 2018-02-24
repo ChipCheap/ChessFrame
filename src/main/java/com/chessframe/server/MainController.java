@@ -251,6 +251,8 @@ public class MainController implements Resizable {
     public void startServer(int port) throws IOException {
         //TODO Implement Server.
         showView(CurrentView.Console);
+        consoleController.println(String.format("Started server successfully at port %d.", port));
+        System.out.println();
     }
 
     /**
@@ -258,5 +260,6 @@ public class MainController implements Resizable {
      */
     public void stopServer() {
         //TODO implement
+        consoleController.println("Unimplemented.");
     }
 }
